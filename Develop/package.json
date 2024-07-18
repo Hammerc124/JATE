@@ -1,0 +1,37 @@
+{
+  "name": "jate",
+  "version": "1.0.0",
+  "description": "no internet text editor",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm start"
+  },
+  "keywords": [],
+  "author": "Caleb Hammer",
+  "license": "MIT",
+  "dependencies": {
+    "css-loader": "^6.8.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "webpack-pwa-manifest": "^4.3.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "concurrently": "^5.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hammerc124/noweb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hammerc124/noweb/issues"
+  },
+  "homepage": "https://github.com/Hammerc124/noweb#readme"
+}
